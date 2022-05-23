@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import random
 import sys
 
@@ -45,6 +44,3 @@ while True:
 
     pygame.display.update()
     FramePerSec.tick(FPS)
-=======
-
->>>>>>> 3c429f09c9a26d27bd90e74920c607c206fd69ca
