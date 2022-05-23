@@ -12,6 +12,7 @@ PT1 = GroundPlatform()
 PT1.surf = pygame.Surface((WIDTH, 20))
 PT1.surf.fill((240, 200, 0))
 PT1.rect = PT1.surf.get_rect(center=(WIDTH / 2, HEIGHT - 10))
+PT1.point = False
 
 all_sprites = pygame.sprite.Group()
 all_sprites.add(PT1)

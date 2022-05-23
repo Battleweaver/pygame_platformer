@@ -15,6 +15,7 @@ class Player(pygame.sprite.Sprite):
         self.acc = vec((0, 0))
 
         self.jumping = False
+        self.score = 0
 
     def move(self):
         self.acc = vec((0, 0.5))
@@ -52,6 +53,10 @@ class Player(pygame.sprite.Sprite):
         if self.vel.y > 0:
             if hits:
                 if self.pos.y < hits[0].rect.bottom:
+                    if hits[0].point == True:
+                        hits[0].point = False
+                        self.score += 1
+
                     self.jumping = False
                     self.pos.y = hits[0].rect.top + 1
                     self.vel.y = 0

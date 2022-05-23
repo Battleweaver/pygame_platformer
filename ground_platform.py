@@ -10,3 +10,4 @@ class GroundPlatform(pygame.sprite.Sprite):
         self.surf = pygame.Surface((random.randint(50, 100), 15))
         self.surf.fill((238, 255, 0))
         self.rect = self.surf.get_rect(center=(random.randint(0, WIDTH-10), random.randint(0, HEIGHT - 30)))
+        self.point = True

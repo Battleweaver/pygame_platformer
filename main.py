@@ -1,6 +1,5 @@
-import random
 import sys
-
+import time
 import pygame
 from pygame.locals import *
 from constants import *
@@ -15,6 +14,17 @@ pygame.display.set_caption("Game")
 
 # Game Loop
 while True:
+
+    if P1.rect.top > HEIGHT:
+        for entity in all_sprites:
+            entity.kill()
+            time.sleep(1)
+            displaysurface.fill((255,0,0))
+            time.sleep(2)
+            pygame.display.update()
+            pygame.quit()
+            sys.exit()
+
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
@@ -41,6 +51,10 @@ while True:
     plat_gen()
     for entity in all_sprites:
         displaysurface.blit(entity.surf, entity.rect)
+
+    score_font = pygame.font.SysFont("Verdana", 20)
+    score_display = score_font.render(str(P1.score), True, (123, 255, 0))
+    displaysurface.blit(score_display, (WIDTH / 2, 10))
 
     pygame.display.update()
     FramePerSec.tick(FPS)
